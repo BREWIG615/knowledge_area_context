@@ -36,3 +36,7 @@ This file maps to the Knowledge area context form in a structered and repeatable
   * `Tools`. The Applications nd other technologies that enable the goals of the Knowledge Area.
   * `Techniques`. The methods and procedures used to perform activities and produce deliverables within a Knowledge Area. Techniques include common coventions, best practic recommendations, standards and protocols, and, where applicable,energing alternative approaches. 
   * `Metrics`. The standards for measurement or evaluation of performance, progress, quality, effciency, or other effect. The metrics sections identify measurable facets of the work that is done within each Knowledge Area. Metrics may also measure more abstract characteristics, like improvement or value. 
+
+
+### Processing.
+The `knowledge.py` file takes the input from the Excel file that stores the values that will be map to the corresponding section within the Knowledge Area form. The values in the Excel file are all separated by the use of a semicolon. Additionally an initial space should be added to each column in the zero position after column A. Otherwise the spacing gets thrown off. When the `knowledge.py` script is run it read in `knowledge.jinja2` file which holds the layout for the form in order to produce the `knowledge.tex` file. When this script is run using VS Code with LaTeX installed it will produce the final PDF product.

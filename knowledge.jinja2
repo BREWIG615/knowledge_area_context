@@ -1,0 +1,140 @@
+\BLOCK{ macro format_element(row_dict, 
+    goal_list, 
+    input_list, 
+    activity_list, 
+    deliverable_list,
+    supplier_list,
+    participant_list,
+    consumer_list,
+    technique_list,
+    tool_list,
+    metric_list) }
+
+    \begin{mdframed}[roundcorner=5pt]
+      \textbf{DEFN: } \VAR{row_dict['defn']} \\
+    \end{mdframed}
+
+    \begin{mdframed}[backgroundcolor=red!8,roundcorner=5pt]
+    \textbf{Goals:}
+    \begin{item}
+    %% for goal in goal_list
+        \VAR{goal} \\
+    %% endfor
+    \end{item}
+    \end{mdframed}
+
+    \begin{mdframed}
+    \begin{minipage}[t]{.25\textwidth} %
+    \textbf{Inputs:}
+    \begin{item}
+    %% for input in input_list  
+        $\ast$ \VAR{input} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.35\textwidth} %
+    \textbf{Activities:}
+    \begin{item}
+    %% for activity in activity_list  
+         $\ast$ \VAR{activity} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.25\textwidth} %
+    \textbf{Deliverables:}
+    \begin{item}
+    %% for deliverable in deliverable_list  
+        $\ast$ \VAR{deliverable} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+    \end{mdframed}
+
+    \begin{minipage}[tl]{.19\textwidth} %
+    \textbf{Suppliers:}
+    \begin{item}
+    %% for supplier in supplier_list
+        $\circ$ \VAR{supplier} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+    \hfill\vline\hfill
+    \begin{minipage}[tl]{.24\textwidth} %
+    \textbf{Participants:}
+    \begin{item}
+    %% for participant in participant_list
+        $\circ$ \VAR{participant} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+    \hfill\vline\hfill
+    \begin{minipage}[tl]{.2\textwidth} %
+    \textbf{Consumers:}
+    \begin{item}
+    %% for consumer in consumer_list
+        $\circ$ \VAR{consumer} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+
+    \begin{mdframed}[backgroundcolor=purple!8,roundcorner=15pt]
+    \begin{minipage}[t]{.25\textwidth} %
+    \textbf{Techniques:}
+    \begin{item}
+    %% for technique in technique_list
+        $\diamond$ \VAR{technique} \\
+    %% endfor
+    \end{item}
+    \end{minipage} %
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.35\textwidth} %
+    \textbf{Tools:}
+    \begin{item}
+    %% for tool in tool_list
+        $\diamond$ \VAR{tool} \\
+    %% endfor 
+    \end{item}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.25\textwidth}
+    \textbf{Metrics:}
+    \begin{item}
+    %% for metric in metric_list
+        $\diamond$ \VAR{metric} \\
+    %% endfor
+    \end{item}
+    \end{minipage}
+    \end{mdframed}
+
+\BLOCK{ endmacro }
+
+\documentclass{article}
+
+\usepackage[landscape,margin=0.5in]{geometry}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\begin{document}
+
+%% for i in range(rows | length)
+
+    \VAR{format_element(rows[i], 
+    goals[i], 
+    inputs[i], 
+    activities[i], 
+    deliverables[i],
+    suppliers[i],
+    participants[i],
+    consumers[i],
+    techniques[i],
+    tools[i],
+    metrics[i])}
+
+%% endfor
+
+\end{document}

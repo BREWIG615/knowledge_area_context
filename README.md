@@ -13,7 +13,7 @@ This is a `Python 3` package with the following python package dependencies.
 
 ## Usage
 
-##Inputs
+## Inputs
 
 This package employes structured Excel file inputs to make it easy for a user to experiment configurations.
 
